@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import RentalCard from "./components/Cardcomp";
 import axios from "axios";
 import Pick from "./components/Pick/pick";
@@ -43,42 +43,48 @@ function App() {
           />
         </div>
         <div className="flex flex-row gap-9  items-center justify-between">
-        <Pick
-        title="Pick - Up"
-        locationLabel="Locations"
-        dateLabel="Date"
-        timeLabel="Time"
-        selectCityText="Select your city"
-        selectDateText="Select your date"
-        selectTimeText="Select your time"
-      />
-      <button className="w-16 h-16 bg-blue-600 rounded-xl	text-white	">~.~</button>
-            <Pick
-        title="Drop - Off"
-        locationLabel="Locations"
-        dateLabel="Date"
-        timeLabel="Time"
-        selectCityText="Select your city"
-        selectDateText="Select your date"
-        selectTimeText="Select your time"
-      />
+          <Pick
+            title="Pick - Up"
+            locationLabel="Locations"
+            dateLabel="Date"
+            timeLabel="Time"
+            selectCityText="Select your city"
+            selectDateText="Select your date"
+            selectTimeText="Select your time"
+          />
+          <button className="w-16 h-16 bg-blue-600 rounded-xl	text-white	">
+            ~.~
+          </button>
+          <Pick
+            title="Drop - Off"
+            locationLabel="Locations"
+            dateLabel="Date"
+            timeLabel="Time"
+            selectCityText="Select your city"
+            selectDateText="Select your date"
+            selectTimeText="Select your time"
+          />
         </div>
         <div className="flex justify-between pl-3 pr-3 mt-5 mb-5">
           <h2 className="text-stone-400	">Popular Car</h2>
           <h2 className="text-cyan-400">View All</h2>
-
         </div>
         <div className="flex flex-row flex-wrap gap-6 justify-between">
           {products.map((item) => (
-            <AvtoCard key={item.id} imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdQBc4yGqak0MONR5HxSFgy9iL_51GBX-1Zg&s" carName={item.name} price={item.price}/>
+            <AvtoCard
+              key={item.id}
+              imageUrl={item.image}
+              carName={item.name}
+              price={item.price}
+            />
           ))}
         </div>
         <div className="flex justify-center mt-[60px] mb-[60px]">
-          <button className="pt-3 pb-3 pl-4 pr-4 bg-blue-600 text-cyan-50 rounded-[8px]">Show more car</button>
+          <button className="pt-3 pb-3 pl-4 pr-4 bg-blue-600 text-cyan-50 rounded-[8px]">
+            <a href="/Admin">Admin</a>
+          </button>
         </div>
       </div>
-
-
     </>
   );
 }
